@@ -6,7 +6,8 @@ const app = express();
 app.get('/', (req, res) => res.send('Sala SAH Activa en Fly.io'));
 app.listen(process.env.PORT || 3000);
 
-const MI_TOKEN = "NUEVO_TOKEN_AQUI"; // Genera uno nuevo siempre
+const MI_TOKEN = "thr1.AAAAAGl5fS55kRgHQf_bCg.hujqeWSsDLA"; // Genera uno nuevo siempre
+const ADMIN_AUTH = "5ix0yOu72gjslrVacLSe_dwbyrNd7f8zbU3zKlWC7kw";
 
 HaxballJS({
   puppeteerArgs: [
@@ -80,3 +81,4 @@ room.setDefaultStadium("Big");
 
   room.onTeamVictory = () => setTimeout(() => room.restartGame(), 3000);
 });
+
