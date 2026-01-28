@@ -4,7 +4,7 @@
 #
 
 app = 'haxball-room-247'
-primary_region = 'gru'
+primary_region = 'iad'
 
 [build]
 
