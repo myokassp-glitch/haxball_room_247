@@ -6,7 +6,7 @@ const app = express();
 app.get('/', (req, res) => res.send('Sala SAH Activa en Fly.io'));
 app.listen(process.env.PORT || 3000);
 
-const MI_TOKEN = "thr1.AAAAAGl5fS55kRgHQf_bCg.hujqeWSsDLA"; // Genera uno nuevo siempre
+const MI_TOKEN = "thr1.AAAAAGl5hTzc3U-uLI36Sw.ghlbwoDi5-E"; // Genera uno nuevo siempre
 const ADMIN_AUTH = "5ix0yOu72gjslrVacLSe_dwbyrNd7f8zbU3zKlWC7kw";
 const dclin = "https://discord.gg/Mw8e6ZcnWk";
 
@@ -81,3 +81,4 @@ room.setDefaultStadium("Big");
 
   room.onTeamVictory = () => setTimeout(() => room.restartGame(), 3000);
 });
+
