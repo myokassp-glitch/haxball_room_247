@@ -1,29 +1,36 @@
-const HaxballJS = require("haxball.js");
+const HaxballJS = require("haxball.js").default;
+const express = require('express');
+const app = express();
 
-// RECUERDA: Generar el token en https://www.haxball.com/headlesstoken
-// En Koyeb, es mejor usar variables de entorno para el token
-const MI_TOKEN = process.env.HAXBALL_TOKEN || "thr1.AAAAAGlW6vcw728_O71-KQ.NY_ka5XuLHE"; 
-const ADMIN_AUTH = "nzeiy3F0jgqpNxSN4ED2Bsb5qIwt5ih_DdTATyjvksk";
-const DISCORD_LINK = "https://discord.gg/Q6EQrQbb";
+// Servidor básico para Fly.io
+app.get('/', (req, res) => res.send('Sala SAH Activa en Fly.io'));
+app.listen(process.env.PORT || 3000);
 
-HaxballJS.then((HBInit) => {
+const MI_TOKEN = "NUEVO_TOKEN_AQUI"; // Genera uno nuevo siempre
+
+HaxballJS({
+  puppeteerArgs: [
+    '--no-sandbox',
+    '--disable-setuid-sandbox',
+    '--disable-dev-shm-usage',
+    '--disable-gpu'
+  ]
+  // Se eliminó executablePath para que Fly.io use su propio navegador
+}).then((HBInit) => {
   const room = HBInit({
-    roomName: "Network Group | Room 1",
-    public: false, 
-    password: "SAH2K26",
-    maxPlayers: 30,
+    roomName: "NetWork Group | Test Room 1 [MIA]",
+    public: true, 
+    maxPlayers: 30, // Límite de 12 jugadores
     token: MI_TOKEN,
     noPlayer: true,
-    // --- CONFIGURACIÓN PARA KOYEB/LINUX ---
-    puppeteerArgs: [
-      '--no-sandbox',
-      '--disable-setuid-sandbox',
-      '--disable-dev-shm-usage',
-      '--disable-gpu'
-    ]
+    geo: { code: "ec", lat: -1.8312, lon: -78.1834 } // Ubicación visual en Ecuador
   });
 
-  room.setDefaultStadium("Big");
+  room.onRoomLink = (link) => {
+    console.log("Sala abierta en: " + link);
+  };
+
+room.setDefaultStadium("Big");
 
   function checkAdmins() {
     const admins = room.getPlayerList().filter(p => p.admin);
@@ -72,9 +79,4 @@ HaxballJS.then((HBInit) => {
   }, 300000);
 
   room.onTeamVictory = () => setTimeout(() => room.restartGame(), 3000);
-
-  room.onRoomLink = (link) => {
-    console.log("Sala abierta en: " + link);
-  };
-
 });
