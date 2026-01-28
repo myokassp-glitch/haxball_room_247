@@ -1,0 +1,11 @@
+app = "networkgtouphaxball"
+primary_region = "mia" # 'gru' es Sao Paulo (Brasil), ideal para el menor ping en Sudamérica. Usa 'mia' para Miami.
+
+[build]
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = false # IMPORTANTE: Evita que el bot se apague solo.
+  auto_start_machines = true
+  min_machines_running = 1
