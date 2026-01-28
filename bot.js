@@ -20,11 +20,10 @@ HaxballJS({
 }).then((HBInit) => {
   const room = HBInit({
     roomName: "NetWork Group | Test Room 1 [MIA]",
-    public: true, 
+    public: false,
     maxPlayers: 30, // Límite de 12 jugadores
     token: MI_TOKEN,
     noPlayer: true,
-    geo: { code: "ec", lat: -1.8312, lon: -78.1834 } // Ubicación visual en Ecuador
   });
 
   room.onRoomLink = (link) => {
@@ -81,4 +80,5 @@ room.setDefaultStadium("Big");
 
   room.onTeamVictory = () => setTimeout(() => room.restartGame(), 3000);
 });
+
 
