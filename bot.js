@@ -8,10 +8,10 @@ const DISCORD_LINK = "https://discord.gg/Q6EQrQbb";
 
 HaxballJS.then((HBInit) => {
   const room = HBInit({
-    roomName: "SAH | Room 1",
+    roomName: "Network Group | Room 1",
     public: false, 
     password: "SAH2K26",
-    maxPlayers: 12,
+    maxPlayers: 30,
     token: MI_TOKEN,
     noPlayer: true,
     // --- CONFIGURACIÓN PARA KOYEB/LINUX ---
@@ -76,4 +76,5 @@ HaxballJS.then((HBInit) => {
   room.onRoomLink = (link) => {
     console.log("Sala abierta en: " + link);
   };
+
 });
