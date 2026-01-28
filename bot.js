@@ -8,6 +8,7 @@ app.listen(process.env.PORT || 3000);
 
 const MI_TOKEN = "thr1.AAAAAGl5fS55kRgHQf_bCg.hujqeWSsDLA"; // Genera uno nuevo siempre
 const ADMIN_AUTH = "5ix0yOu72gjslrVacLSe_dwbyrNd7f8zbU3zKlWC7kw";
+const dclin = "https://discord.gg/Mw8e6ZcnWk";
 
 HaxballJS({
   puppeteerArgs: [
@@ -75,11 +76,8 @@ room.setDefaultStadium("Big");
   };
 
   setInterval(() => {
-    room.sendAnnouncement("📢 ¡Únete a nuestro Discord!: " + DISCORD_LINK, null, 0x7289DA, "bold");
+    room.sendAnnouncement("📢 ¡Únete a nuestro Discord!: " + dclin, null, 0x7289DA, "bold");
   }, 300000);
 
   room.onTeamVictory = () => setTimeout(() => room.restartGame(), 3000);
 });
-
-
-
