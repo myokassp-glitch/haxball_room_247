@@ -19,7 +19,7 @@ HaxballJS({
   // Se eliminó executablePath para que Fly.io use su propio navegador
 }).then((HBInit) => {
   const room = HBInit({
-    roomName: "NetWork Group | Test Room 1 [MIA]",
+    roomName: "🟡🔵🔴 | NetWork Group 1",
     public: false,
     maxPlayers: 30, // Límite de 12 jugadores
     token: MI_TOKEN,
@@ -80,5 +80,6 @@ room.setDefaultStadium("Big");
 
   room.onTeamVictory = () => setTimeout(() => room.restartGame(), 3000);
 });
+
 
 
