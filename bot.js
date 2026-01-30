@@ -11,7 +11,8 @@ HaxballJS({
 const roomName = 'NetWorkHax | 4v4 AF';
 const maxPlayers = 30;
 const roomPublic = true;
-const token = ""; // Insert token here
+const token = "thr1.AAAAAGl8KFn-yC69rydrsA.P80jVCu6ixA"; // Insert token here
+const geo = { code: "ec", lat: -1.8312, lon: -78.1834 }; //locaclizacion ecuador
 });
 var roomWebhook = ''; // this webhook is used to send the details of the room (chat, join, leave) ; it should be in a private discord channel
 var gameWebhook = ''; // this webhook is used to send the summary of the games ; it should be in a public discord channel
@@ -25,6 +26,7 @@ var gameConfig = {
     maxPlayers: maxPlayers,
     public: roomPublic,
     noPlayer: true,
+    geo: geo;
 }
 
 if (typeof token == 'string' && token.length == 39) {
