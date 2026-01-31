@@ -6,11 +6,10 @@
   "scripts": {
     "start": "node index.js"
   },
-"dependencies": {
-  "haxball.js": "latest"
-}
+  "dependencies": {
+    "haxball.js": "latest"
+  },
   "engines": {
     "node": ">=18.0.0"
   }
 }
-
