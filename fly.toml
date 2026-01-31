@@ -1,0 +1,16 @@
+# fly.toml app configuration file generated for haxball-bot-fly
+
+app = "nombre-de-tu-app-aqui" # PON AQUÍ EL NOMBRE QUE LE DISTE AL CREAR LA APP
+primary_region = "bog" # Bogotá es lo más cercano a Ecuador para mejor ping
+
+[build]
+  dockerfile = "Dockerfile"
+
+# Configuración de la máquina virtual
+[vm]
+  size = "shared-cpu-1x"
+  memory = "1gb" # Haxball necesita al menos 512MB-1GB para no crashear con Chrome
+
+# NO AGREGAMOS [services] ni [http_service]
+# Porque tu index.js no abre puertos web (no usa app.listen).
+# Esto configura el bot como un "Worker" que corre en segundo plano.
